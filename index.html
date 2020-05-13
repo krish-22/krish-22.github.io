@@ -288,9 +288,9 @@ var addTask=function(){
 	incompleteTaskHolder.appendChild(listItem);
 	bindTaskEvents(listItem, taskCompleted);
 
-	taskInput.value="";
- databaseRef.push(incompleteTaskHolder);
-	databaseRef.once(incompleteTaskHolder);
+	
+ databaseRef.push(taskInput.value);
+	databaseRef.once(taskInput.value="");
 
 }
 
