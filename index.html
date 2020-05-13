@@ -215,6 +215,20 @@ HEIGHT:48PX;
       </ul>
     </div>
 <script>
+  // Set the configuration for your app
+  // TODO: Replace with your project's config object
+  var config = {
+    apiKey: "AIzaSyDv4vVIkdZHh71DIbkaQPQv8TLKJnPVGDI",
+    authDomain: "ks22-1ad56.firebaseapp.com",
+    databaseURL: "https://ks22-1ad56.firebaseio.com/",
+	  projectId: "ks22-1ad56",
+    storageBucket: ""
+  };
+  firebase.initializeApp(config);
+
+  // Get a reference to the database service
+  var database = firebase.database();
+	
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incomplete-tasks
