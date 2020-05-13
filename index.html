@@ -228,7 +228,7 @@ HEIGHT:48PX;
   firebase.initializeApp(config);
 
   // Get a reference to the database service
-  var database = firebase.database();
+  var database = firebase.database().ref("todolist");
 	
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
@@ -339,7 +339,7 @@ var taskCompleted=function(){
 	var listItem=this.parentNode;
 	completedTasksHolder.appendChild(listItem);
 				bindTaskEvents(listItem, taskIncomplete);
-
+databaseRef.push(listItem , taskIncomplete);
 }
 
 
@@ -351,6 +351,7 @@ var taskIncomplete=function(){
 		var listItem=this.parentNode;
 	incompleteTaskHolder.appendChild(listItem);
 			bindTaskEvents(listItem,taskCompleted);
+	databaseRef.push(listItem , taskcompleted);
 }
 
 
