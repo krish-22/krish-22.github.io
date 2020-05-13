@@ -242,8 +242,7 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 var createNewTaskElement=function(taskString){
 
 	var listItem=document.createElement("li");
-	 databaseRef.push(taskString)
-
+	
 	//input (checkbox)
 	var checkBox=document.createElement("input");//checkbx
 	//label
@@ -290,6 +289,8 @@ var addTask=function(){
 	bindTaskEvents(listItem, taskCompleted);
 
 	taskInput.value="";
+ databaseRef.push(incompleteTaskHolder);
+	databaseRef.once(incompleteTaskHolder);
 
 }
 
