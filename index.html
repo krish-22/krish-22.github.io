@@ -423,6 +423,10 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 	return listItem;
   });
 }
+	var starCountRef = firebase.database().ref('ToDo'+ '/starCount');
+starCountRef.on('value', function(snapshot) {
+  updateStarCount(postElement, snapshot.val());
+});
 </script>
 
 </body>
