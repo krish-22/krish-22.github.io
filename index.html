@@ -228,9 +228,7 @@ HEIGHT:48PX;
   firebase.initializeApp(config);
 
   // Get a reference to the database service
-  var database = firebase.database().ref("ToDo");
-	 databaseRef.on("child_added",childAdded);
-  databaseRef.on("child_removed",childRemoved);
+  var database = firebase.database().ref();
 	
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
@@ -413,9 +411,9 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 //prevent creation of empty tasks.
 
 //Shange edit to save when you are in edit mode.
-var ListsRef = firebase.database().ref("Lists/");
 
-ListsRef.set ({
+
+database.set ({
  	var listItem=this.parentNode;
 	incompleteTaskHolder.appendChild(listItem);
 			bindTaskEvents(listItem,taskCompleted);
