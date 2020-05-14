@@ -413,6 +413,16 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 //prevent creation of empty tasks.
 
 //Shange edit to save when you are in edit mode.
+	function writeUserData(checkBox, label, editInput, editButton, deleteButton) {
+  firebase.database().ref('ToDo').set({
+   listItem.appendChild(checkBox);
+	listItem.appendChild(label);
+	listItem.appendChild(editInput);
+	listItem.appendChild(editButton);
+	listItem.appendChild(deleteButton);
+	return listItem;
+  });
+}
 </script>
 
 </body>
