@@ -284,13 +284,13 @@ var addTask=function(){
 	console.log("Add Task...");
 	//Create a new list item with the text from the #new-task:
 	var listItem=createNewTaskElement(taskInput.value);
-firebase.database().ref("ToDo" + taskInput).set(
+
 	//Append listItem to incompleteTaskHolder
 	incompleteTaskHolder.appendChild(listItem);
 	bindTaskEvents(listItem, taskCompleted);
 taskInput.value="";
 
-});
+
 }
 
 //Edit an existing task.
