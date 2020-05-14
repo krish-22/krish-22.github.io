@@ -228,8 +228,9 @@ HEIGHT:48PX;
   firebase.initializeApp(config);
 
   // Get a reference to the database service
-  var database = firebase.database("ToDo");
-	
+  var database = firebase.database().ref("ToDo");
+	 databaseRef.on("child_added",childAdded);
+  databaseRef.on("child_removed",childRemoved);
 	
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
